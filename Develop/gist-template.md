@@ -49,12 +49,14 @@ the ^ and $ represent Anchors. Anchors are crucial in defining the position of t
 
 ### Quantifiers
 
+Within `([a-z]+)`, the '+' quantifier matches the previous token between one and unlimited times. Quantifiers specify the number of occurrences of the preceding element within the pattern.  + allows one or more occurrences of lowercase alphabetic characters, ensuring the matching of HTML tag names.
 ### OR Operator
+
+The non-capturing group (?:...|...) contains two alternatives separated by | (OR operator). >(.*)<\/\1> captures content between open and close HTML tags. On the other hand, \s+\/> identifies self-closing tags
 
 ### Character Classes
 
-### Flags
+[^<]+ inside the second capturing group matches any character that is not an opening angle bracket.
 
 ## Author
-
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Zechiel Lozer(https://github.com/ZD0341)
