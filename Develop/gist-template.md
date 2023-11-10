@@ -28,6 +28,17 @@ okay so lets break down /^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/
 we have '/' that open and close the expression, followed by an anchor '^' and an opening angle bracket '<'.
 '([a-z]+)' Matches and captures one or more lowercase alphabetic characters
 
++ matches the previous token between one and unlimited times, as many times as possible, giving back as needed
+
+In the second group '([^<]+)*'  * matches the previous token between zero and unlimited times, as many times as possible, giving back as needed
+
+[^<] inside matches and captures any character that is not an opening angle bracket!
+
+As you can see, things are not so bad when you break it down, lets keep going!
+
+the next part were going to talk about is the Non-capturing group, the non-capturing group is comprised of 
+(?:>(.*)<\/\1>|\s+\/>)  these are denoted by '(?:...)'
+
 ### Anchors
 These expressions are opened and closed with /^ and $/
 the ^ and $ represent Anchors. 
