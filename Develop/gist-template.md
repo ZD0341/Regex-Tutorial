@@ -35,13 +35,17 @@ In the second group '([^<]+)*'  * matches the previous token between zero and un
 [^<] inside matches and captures any character that is not an opening angle bracket!
 
 As you can see, things are not so bad when you break it down, lets keep going!
-
-the next part were going to talk about is the Non-capturing group, the non-capturing group is comprised of 
+The next part were going to talk about is the Non-capturing group, the non-capturing group is comprised of 
 (?:>(.*)<\/\1>|\s+\/>)  these are denoted by '(?:...)'
+
+The regular expression pattern (?:>(.*)<\/\1>|\s+\/>) constitutes a non-capturing group. It contains two alternatives separated by | (OR operator)
+
+So check it out, (?: >(.*)<\/\1> | \s+\/>)
+does some tag matching. It's got two moves: one for the stuff between open and close HTML tags, and another for self-closing tags. The first part, >(.*)<\/\1>, goes between the > and </ for whatever's in there. The \1 thing at the end points back to the captured text between those tags. The other part, \s+\/>, is for those tags that close by themselves.
 
 ### Anchors
 These expressions are opened and closed with /^ and $/
-the ^ and $ represent Anchors. 
+the ^ and $ represent Anchors. Anchors are crucial in defining the position of the pattern within the text. They ensure that the regex only matches patterns at the start or end of a string.
 
 ### Quantifiers
 
